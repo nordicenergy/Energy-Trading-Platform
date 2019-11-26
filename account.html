@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Account Dashboard</title>
+
+  <link rel="stylesheet" href="https://etherscan.io/assets/vendor/font-awesome/css/fontawesome-all.min.css?v=0.5.1.0">
+  <link rel="stylesheet" href="https://etherscan.io/assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://etherscan.io/assets/vendor/hs-megamenu/src/hs.megamenu.css?v=0.5.1.0">
+  <link rel="stylesheet" href="https://etherscan.io/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="https://etherscan.io/assets/vendor/jquery-ui/jquery-ui.min.css?v=0.0.7">
+  <link rel="stylesheet" href="https://etherscan.io/assets/vendor/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="https://etherscan.io/assets/css/theme.min.css?v=0.11.3.0">
+
+  <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
+  <link rel="stylesheet" href="assets/css/shared/style.css">
+  <link rel="stylesheet" href="assets/css/demo_1/style.css">
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+</head>
+
+<body class="header-fixed">
+<!-- partial:partials/_header.html -->
+<nav class="t-header">
+  <div class="t-header-brand-wrapper">
+    <a href="index.html">
+      <p style="color:rgb(80, 80, 80);font-weight:bold"> Nordic Energy</p>
+      <!-- <img class="logo" src="../assets/images/logo.svg" alt="">
+		<img class="logo-mini" src="../assets/images/logo_mini.svg" alt=""> -->
+    </a>
+  </div>
+  <div class="t-header-content-wrapper">
+    <div class="t-header-content">
+      <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
+        <i class="mdi mdi-menu"></i>
+      </button>
+      <ul class="nav ml-auto"></ul>
+    </div>
+  </div>
+</nav>
+<!-- partial -->
+<div class="page-body">
+  <!-- partial:partials/_sidebar.html -->
+    <div class="sidebar">
+      <ul class="navigation-menu">
+        <li></li>
+        <li class="nav-category-divider">MAIN</li>
+        <li>
+          <a href="index.html">
+            <span class="link-title">Energy Trading</span>
+            <i class="mdi mdi-recycle link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="account.html">
+            <span class="link-title">My Account</span>
+            <i class="mdi mdi-face link-icon"></i>
+          </a>
+        </li>
+        <li>
+        <li class="nav-category-divider">DOCUMENTS</li>
+        <li>
+          <a href="https://etherscan.io/token/0x4d0a4c762bd7f742096daaf5911dcf9c94b9ea95">
+            <span class="link-title">Technical Details</span>
+            <i class="mdi mdi-details link-icon"></i>
+          </a>
+        </li>
+        <li>
+        <li class="nav-category-divider">CONTRACTS</li>
+        <li>
+          <a href="https://etherscan.io/token/0x4d0a4c762bd7f742096daaf5911dcf9c94b9ea95">
+            <span class="link-title">Smart Contract</span>
+            <i class="mdi mdi-script link-icon"></i>
+          </a>
+          <a href="https://nordicenergy.io">
+            <span class="link-title">Token Sale</span>
+            <i class="mdi mdi-coin link-icon"></i>
+          </a>
+        </li>
+        <li>
+        <li class="nav-category-divider">SOCIAL MEDIA</li>
+        <li>
+          <a href="https://github.com/nordicenergy/Energy-Asset-Platform/">
+            <span class="link-title">GiHhub</span>
+            <i class="mdi mdi-github-circle link-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  <!-- partial -->
+  <div class="page-content-wrapper">
+    <div class="page-content-wrapper-inner">
+      <div class="content-viewport">
+        <div class="row">
+          <div class="col-12 py-5">
+            <h4>Account</h4>
+            <p class="text-gray">Please enter your Ethereum wallet address.</p>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-lg-7 col-md-12 equel-grid">
+            <div class="grid widget-revenue-card">
+              <div class="grid-body d-flex flex-column h-100">
+                <div class="split-header">
+                  <p class="card-title">Wallet Address</p>
+                  <!-- <div class="content-wrapper v-centered">
+					  <small class="text-muted">2h ago</small>
+					  <span class="btn action-btn btn-refresh btn-xs component-flat">
+						<i class="mdi mdi-autorenew text-muted mdi-2x"></i>
+					  </span>
+					</div> -->
+                </div>
+                <div class="">
+                  <!-- <canvas id="cpu-performance" height="80"></canvas> -->
+                  <br>
+                  <br>
+                  <div class="d-flex align-items-end mt-2" style="margin:8px">
+                    <input type="text" class="form-control" id="orderprice" readonly value="0" placeholder="Order Price"
+                           autocomplete="off">
+                  </div>
+                  <br>
+                  <div class="">
+                    <button class="btn" id="buyy" type="button" onclick="setValue()"
+                            style="width:90%;margin:10px;background-color:#e6ac00;color:#fff">VIEW</button>
+                    <!-- <button class="btn" type="button" onclick="setValue()"
+					  style="width:190px;margin:5px;background-color:#e6b800;color:#fffff"">BUY</button> -->
+                  </div>
+
+                  <!-- <div class="w-50">
+					  <div class="d-flex justify-content-between text-muted mt-3">
+						<small>Usage</small> <small>35.62 GB / 2TB</small>
+					  </div>
+					  <div class="progress progress-slim mt-2">
+						<div class="progress-bar bg-primary" role="progressbar" style="width: 68%" aria-valuenow="68"
+						  aria-valuemin="0" aria-valuemax="100">
+						</div>
+					  </div>
+					</div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-6 col-sm-12 equel-grid">
+            <div class="grid">
+              <div class="grid-body">
+                <div class="split-header">
+                  <p class="card-title">My Assets</p>
+                  <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left"
+                        title="Available balance since the last week">
+                      <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                    </span>
+                </div>
+                <div class="d-flex align-items-end mt-2">
+                  <h3><span id="storedETH">0</span></h3>
+                  <p class="ml-1 font-weight-bold">ETH</p>
+                </div>
+                <div class="d-flex align-items-end mt-2">
+                  <h3><span id="storedNET">0</span></h3>
+                  <p class="ml-1 font-weight-bold">NET Token</p>
+                </div>
+                <br>
+
+                <br>
+                <div class="">
+                  <button class="btn btn-outline-light text-gray component-flat w-50 mr-2" type="button"
+                          onclick="getValue()">Refresh</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-12 col-md-12 equel-grid">
+            <div class="grid widget-revenue-card">
+              <div class="card"></div>
+
+
+              <div class="table-responsive mb-2 mb-md-0">
+                <table class="table table-hover">
+                  <thead class="thead-light">
+                  <tr>
+                    <th scope="col" width="1">
+                      Txn Hash
+                    </th>
+                    <th scope="col" width="1" class="d-none d-sm-table-cell">
+                      Block
+                    </th>
+                    <th scope="col">
+                      <a href="javascript:;" onclick="switchAgeToDateTimeInAddPage(this)" id="lnkTxAgeDateTime" title="Click to show Datetime Format">Age</a>
+                    </th>
+                    <th scope="col">
+                      From
+                    </th>
+                    <th scope="col" width="30"></th>
+                    <th scope="col">
+                      To
+                    </th>
+                    <th scope="col">
+                      Value
+                    </th>
+                    <th scope="col"><span id="ContentPlaceHolder1_spanTxFee" title="(Gas Price * Gas Used by Txns) in Ether"><span class="text-secondary">[Txn Fee]</span></span>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr><td><a class="hash-tag text-truncate" href="/tx/0xd613151c13a3d5fefe3bcaa382de5612228dcc7d3b5cb49f1e0edff19cb968c1">0xd613151c13a3d5fefe3bcaa382de5612228dcc7d3b5cb49f1e0edff19cb968c1</a></td><td class="d-none d-sm-table-cell"><a href="/block/6706357">6706357</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="17 days 22 hrs ago">2019-11-04 5:23:59</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-11-04 5:23:59">17 days 22 hrs ago</span></td><td><a class="hash-tag text-truncate" href="/address/0x38a0d2f379943561038680b064d54d548a3b8041">0x38a0d2f379943561038680b064d54d548a3b8041</a></td><td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td>0<b>.</b>1 Ether</td><td><span class="small text-secondary">0<b>.</b>000021</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x339838a7e357cb8aa76d6621a8cbacb2cb9ecc5b1874680fd52f450549161ebe">0x339838a7e357cb8aa76d6621a8cbacb2cb9ecc5b1874680fd52f450549161ebe</a></td><td class="d-none d-sm-table-cell"><a href="/block/6413896">6413896</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="64 days 18 hrs ago">2019-09-18 9:13:03</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-09-18 9:13:03">64 days 18 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><a class="hash-tag text-truncate" href="/address/0x38a0d2f379943561038680b064d54d548a3b8041">0x38a0d2f379943561038680b064d54d548a3b8041</a></td><td>5 Ether</td><td><span class="small text-secondary">0<b>.</b>000672</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x41807c9e8fa8cef0f2911902288a3771500347db1cceb6c13b0ad10c635c266a">0x41807c9e8fa8cef0f2911902288a3771500347db1cceb6c13b0ad10c635c266a</a></td><td class="d-none d-sm-table-cell"><a href="/block/6413871">6413871</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="64 days 18 hrs ago">2019-09-18 9:07:17</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-09-18 9:07:17">64 days 18 hrs ago</span></td><td><a class="hash-tag text-truncate" href="/address/0x38a0d2f379943561038680b064d54d548a3b8041">0x38a0d2f379943561038680b064d54d548a3b8041</a></td><td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td>2 Ether</td><td><span class="small text-secondary">0<b>.</b>000672</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0xc44594ffcc8874620101f3a7f1567d329bfd3fa9ae5ec5418179c1812aa0e360">0xc44594ffcc8874620101f3a7f1567d329bfd3fa9ae5ec5418179c1812aa0e360</a></td><td class="d-none d-sm-table-cell"><a href="/block/6413837">6413837</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="64 days 18 hrs ago">2019-09-18 8:59:07</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-09-18 8:59:07">64 days 18 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><a class="hash-tag text-truncate" href="/address/0x38a0d2f379943561038680b064d54d548a3b8041">0x38a0d2f379943561038680b064d54d548a3b8041</a></td><td>3 Ether</td><td><span class="small text-secondary">0<b>.</b>000672</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x450b190464dcdf46a1931c04811641fade676bcec666db69da40eaab2807f87e">0x450b190464dcdf46a1931c04811641fade676bcec666db69da40eaab2807f87e</a></td><td class="d-none d-sm-table-cell"><a href="/block/6413825">6413825</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="64 days 18 hrs ago">2019-09-18 8:56:41</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-09-18 8:56:41">64 days 18 hrs ago</span></td><td><a class="hash-tag text-truncate" href="/address/0x38a0d2f379943561038680b064d54d548a3b8041">0x38a0d2f379943561038680b064d54d548a3b8041</a></td><td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td>1 Ether</td><td><span class="small text-secondary">0<b>.</b>000672</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x7bee1429769e4467f1bbb178376b98fa091832e35c7b86e114c1abc39f4a0cb5">0x7bee1429769e4467f1bbb178376b98fa091832e35c7b86e114c1abc39f4a0cb5</a></td><td class="d-none d-sm-table-cell"><a href="/block/6413818">6413818</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="64 days 19 hrs ago">2019-09-18 8:53:13</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-09-18 8:53:13">64 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><a class="hash-tag text-truncate" href="/address/0x38a0d2f379943561038680b064d54d548a3b8041">0x38a0d2f379943561038680b064d54d548a3b8041</a></td><td>1 Ether</td><td><span class="small text-secondary">0<b>.</b>000672</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x6fc6b76ff393645f4660c7be4335432ef1a5b9ec1aad78baf66db30c96e4c29b">0x6fc6b76ff393645f4660c7be4335432ef1a5b9ec1aad78baf66db30c96e4c29b</a></td><td class="d-none d-sm-table-cell"><a href="/block/6413813">6413813</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="64 days 19 hrs ago">2019-09-18 8:52:05</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-09-18 8:52:05">64 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0xef1c2d8e7c819ff2fa8eae40e27b53f9c676735c">0xef1c2d8e7c819ff2fa8eae40e27b53f9c676735c</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>001651456</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x0fe870a16c32ead0177384c28354f86b694502b5117dfd38ec7ea81592f4ddfb">0x0fe870a16c32ead0177384c28354f86b694502b5117dfd38ec7ea81592f4ddfb</a></td><td class="d-none d-sm-table-cell"><a href="/block/6413804">6413804</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="64 days 19 hrs ago">2019-09-18 8:50:07</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-09-18 8:50:07">64 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-newspaper text-secondary"></i>&nbsp;<a href="/address/0xef1c2d8e7c819ff2fa8eae40e27b53f9c676735c" title="0xef1c2d8e7c819ff2fa8eae40e27b53f9c676735c">Contract Creation</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>003121962</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0xf23af843fd0b73ed28829c891ecc21b243015eac55ecc646d164a784cdc7a6e1">0xf23af843fd0b73ed28829c891ecc21b243015eac55ecc646d164a784cdc7a6e1</a></td><td class="d-none d-sm-table-cell"><a href="/block/6389458">6389458</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="68 days 19 hrs ago">2019-09-14 8:12:07</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-09-14 8:12:07">68 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>00013335</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x2eb30f4cd2e359275ac89de9bc2dc648580da2d6d5fd2232d1d05f612bda262c">0x2eb30f4cd2e359275ac89de9bc2dc648580da2d6d5fd2232d1d05f612bda262c</a></td><td class="d-none d-sm-table-cell"><a href="/block/6234419">6234419</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="92 days 17 hrs ago">2019-08-21 10:37:56</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-08-21 10:37:56">92 days 17 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>000026734</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x79ed8e9725f10061cc4168361df6e3f7fb7a5cfef4ea0b00c42fcb6521fc4691">0x79ed8e9725f10061cc4168361df6e3f7fb7a5cfef4ea0b00c42fcb6521fc4691</a></td><td class="d-none d-sm-table-cell"><a href="/block/5587382">5587382</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="192 days 23 hrs ago">2019-05-13 4:39:54</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-13 4:39:54">192 days 23 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>000026862</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x38da9f69ff9faf2d220f7cd7a851ac414e184ce38f29b15d5723e89da896575d">0x38da9f69ff9faf2d220f7cd7a851ac414e184ce38f29b15d5723e89da896575d</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581665">5581665</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 18 hrs ago">2019-05-12 9:12:15</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 9:12:15">193 days 18 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>000026798</span></td></tr><tr><td><span class="text-danger" title="Error in Txn: Bad jump destination"><strong><i class="fa fa-exclamation-circle"></i></strong></span> <a class="hash-tag text-truncate" href="/tx/0x8c7ad5dafd5a9946e6bf4c55c2fc3581e19009b03805f36970afa13a0b3e59aa">0x8c7ad5dafd5a9946e6bf4c55c2fc3581e19009b03805f36970afa13a0b3e59aa</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581519">5581519</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:43:45</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:43:45">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>0076</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x4299149ee3c5e2f883d7f7ebfad8c19b714087afab8adcb764371359d8a46d3a">0x4299149ee3c5e2f883d7f7ebfad8c19b714087afab8adcb764371359d8a46d3a</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581510">5581510</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:42:18</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:42:18">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>000026798</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x5f1a7361cc9ac99efbedf7483c6c8ded962ab96219b504ba0971926982a2c7c0">0x5f1a7361cc9ac99efbedf7483c6c8ded962ab96219b504ba0971926982a2c7c0</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581504">5581504</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:40:39</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:40:39">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>00004167</span></td></tr><tr><td><span class="text-danger" title="Error in Txn: Bad jump destination"><strong><i class="fa fa-exclamation-circle"></i></strong></span> <a class="hash-tag text-truncate" href="/tx/0x1fd1f991f647bdca48eac9fff86e7d95468985f8c291ad6d575f447bb96bf7b2">0x1fd1f991f647bdca48eac9fff86e7d95468985f8c291ad6d575f447bb96bf7b2</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581499">5581499</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:40:10</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:40:10">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>0076</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0xc8c54c77fa6fcf7d59d7395e18913d423635612d9d6fe89a875fde6db58d7170">0xc8c54c77fa6fcf7d59d7395e18913d423635612d9d6fe89a875fde6db58d7170</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581491">5581491</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:36:51</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:36:51">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-newspaper text-secondary"></i>&nbsp;<a href="/address/0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0" title="0x35bf1852ae35d2a6d86ab1b81f6c0e12ee6f24e0">Contract Creation</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>000071705</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x5cd71af3fcd32140987315dbd565b1ac4cf24a3e0efb15c979eb3167fbe206f7">0x5cd71af3fcd32140987315dbd565b1ac4cf24a3e0efb15c979eb3167fbe206f7</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581488">5581488</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:36:21</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:36:21">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-newspaper text-secondary"></i>&nbsp;<a href="/address/0x9a26ee3157d26ee09634fb3c0cc292bd1ab95b5f" title="0x9a26ee3157d26ee09634fb3c0cc292bd1ab95b5f">Contract Creation</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>000071705</span></td></tr><tr><td><span class="text-danger" title="Error in Txn: Bad jump destination"><strong><i class="fa fa-exclamation-circle"></i></strong></span> <a class="hash-tag text-truncate" href="/tx/0xa816e625beddd7f88da5ee6324be1570c423d947af161a6bb5f6475e05643308">0xa816e625beddd7f88da5ee6324be1570c423d947af161a6bb5f6475e05643308</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581478">5581478</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:34:11</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:34:11">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0xe198fc62d58640b6397ab6ab95e8c5a92324a494">0xe198fc62d58640b6397ab6ab95e8c5a92324a494</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>0076</span></td></tr><tr><td><span class="text-danger" title="Error in Txn: Bad jump destination"><strong><i class="fa fa-exclamation-circle"></i></strong></span> <a class="hash-tag text-truncate" href="/tx/0x855c403e27182b9786de85ad78897db9ad86e9c52c850db4c4b40759674fba5a">0x855c403e27182b9786de85ad78897db9ad86e9c52c850db4c4b40759674fba5a</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581470">5581470</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:32:39</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:32:39">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-file-alt text-secondary" title="Contract"></i> <a class="hash-tag text-truncate" href="/address/0xe198fc62d58640b6397ab6ab95e8c5a92324a494">0xe198fc62d58640b6397ab6ab95e8c5a92324a494</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>0076</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x9002e6a257049401256bf8dd3d9e217741fd3bf3b819916def44721f12f315b8">0x9002e6a257049401256bf8dd3d9e217741fd3bf3b819916def44721f12f315b8</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581453">5581453</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:28:53</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:28:53">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-newspaper text-secondary"></i>&nbsp;<a href="/address/0xe198fc62d58640b6397ab6ab95e8c5a92324a494" title="0xe198fc62d58640b6397ab6ab95e8c5a92324a494">Contract Creation</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>000071705</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0xe3705237f34d48206ef8e70cac8e88dadc756a98f7ba2f4b9a0e9eb920425580">0xe3705237f34d48206ef8e70cac8e88dadc756a98f7ba2f4b9a0e9eb920425580</a></td><td class="d-none d-sm-table-cell"><a href="/block/5581453">5581453</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="193 days 19 hrs ago">2019-05-12 8:28:53</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-12 8:28:53">193 days 19 hrs ago</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span></td><td><i class="far fa-newspaper text-secondary"></i>&nbsp;<a href="/address/0xdfd5b1e5c11cc01c6d9d045f2dd4451117c21f38" title="0xdfd5b1e5c11cc01c6d9d045f2dd4451117c21f38">Contract Creation</a></td><td>0 Ether</td><td><span class="small text-secondary">0<b>.</b>000071705</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x2e92637551cf89fdc6069b9ad8271e4cfc7a946e05db5eae9eea05a77a117193">0x2e92637551cf89fdc6069b9ad8271e4cfc7a946e05db5eae9eea05a77a117193</a></td><td class="d-none d-sm-table-cell"><a href="/block/5568602">5568602</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="195 days 18 hrs ago">2019-05-10 9:00:36</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-10 9:00:36">195 days 18 hrs ago</span></td><td><a class="hash-tag text-truncate" href="/address/0x81b7e08f65bdf5648606c89998a9cc8164397647">0x81b7e08f65bdf5648606c89998a9cc8164397647</a></td><td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td>1 Ether</td><td><span class="small text-secondary">0<b>.</b>000021</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0x77c593ba37055ed30b10e1f798b7d32fec848c180e2c72aba75bb4b096fa9a31">0x77c593ba37055ed30b10e1f798b7d32fec848c180e2c72aba75bb4b096fa9a31</a></td><td class="d-none d-sm-table-cell"><a href="/block/5568602">5568602</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="195 days 18 hrs ago">2019-05-10 9:00:36</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-10 9:00:36">195 days 18 hrs ago</span></td><td><a class="hash-tag text-truncate" href="/address/0x81b7e08f65bdf5648606c89998a9cc8164397647">0x81b7e08f65bdf5648606c89998a9cc8164397647</a></td><td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td>1 Ether</td><td><span class="small text-secondary">0<b>.</b>000021</span></td></tr><tr><td><a class="hash-tag text-truncate" href="/tx/0xe68831f3265d3a95236aeaaec9b4eec4a93842ca08f91350b876b8599502f197">0xe68831f3265d3a95236aeaaec9b4eec4a93842ca08f91350b876b8599502f197</a></td><td class="d-none d-sm-table-cell"><a href="/block/5568602">5568602</a></td><td class="showDate " style="display:none !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="195 days 18 hrs ago">2019-05-10 9:00:36</span></td><td style="" class="showAge "><span rel="tooltip" data-placement="bottom" title="" data-original-title="2019-05-10 9:00:36">195 days 18 hrs ago</span></td><td><a class="hash-tag text-truncate" href="/address/0x81b7e08f65bdf5648606c89998a9cc8164397647">0x81b7e08f65bdf5648606c89998a9cc8164397647</a></td><td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span></td><td><span class="hash-tag text-truncate">0xa8973086e55536c26bf4380dd117303b86cfe5f5</span></td><td>1 Ether</td><td><span class="small text-secondary">0<b>.</b>000021</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <footer class="footer">
+          <div class="row">
+            <div class="col-sm-6 text-center text-sm-right order-sm-1">
+              <ul class="text-gray">
+                <li><a href="terms-of-use.html">Terms of Use</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
+              <small class="text-muted d-block">© 2019 <a href="" target="_blank">Nordic Energy</a>. All
+                Rights Reserved.</small>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src=" https://www.amcharts.com/lib/3/amcharts.js"> </script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
+          media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+    <script src="assets/ethprice.js"></script>
+
+    <script src="assets/vendors/js/core.js"></script>
+    <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="assets/js/charts/chartjs.addon.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+    <script src="assets/meta.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
+  <title>Storage</title>
+  <style>
+    body {margin-left:50px;}
+    #storedData {font-size:300%; margin-right:10px;}
+    #newValue {width: 200px; margin-right:10px; text-align:right;}
+  </style>
+</head>
+<body>
+<h3>Storage</h3>
+<ul>
+  <li>Contract Address: <span id="contractAddr"></span></li>
+  <li>Account Address: <span id="accountAddr"></span></li>
+  <li>Stored Data: <span id="storedData"></span>
+    <button onclick="getValue()">Get Balance</button> (Last Block: <span id="lastBlock"></span>)</li>
+  <li><input id="newValue" type="text"><button onclick="setValue()">Refresh</button>
+    <div id="result"></div></li>
+  <li>0x1383b6EFe917e2BB5d80a55a8B1A81f360eD06bd</li>
+</ul>
+
+
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
+<script>
+  var contractAddress = '0x4d0a4c762bd7f742096daaf5911dcf9c94b9ea95';
+var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}];
+var StorageContract;
+var Storage;
+
+window.addEventListener('load', function() {
+
+  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+  if (typeof web3 !== 'undefined') {
+    // Use Mist/MetaMask's provider
+    window.web3 = new Web3(web3.currentProvider);
+  } else {
+    console.log('No web3? You should consider trying MetaMask!')
+    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+    window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+  }
+  // Now you can start your app & access web3 freely:
+  startApp();
+});
+
+function startApp() {
+  simpleStorageContract = web3.eth.contract(abi);
+  simpleStorage = simpleStorageContract.at(contractAddress);
+  document.getElementById('contractAddr').innerHTML = getLink(contractAddress);
+  web3.eth.getAccounts(function(e,r){
+    document.getElementById('accountAddr').innerHTML = getLink(r[0]);
+  });
+
+  getValue();
+}
+
+function getLink(addr) {
+  return '<a target="_blank" href=https://etherscan.io/address/' + addr + '>' + addr +'</a>';
+}
+
+function getValue() {
+  simpleStorage.get(function(e,r){
+    document.getElementById('storedData').innerHTML=r.toNumber();
+
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlock').innerHTML = r;
+  });
+}
+
+function setValue() {
+
+  var newValue = document.getElementById('newValue').value;
+  var txid
+  simpleStorage.set(newValue, function(e,r){
+    document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:orange;">(Pending)</span>';
+    txid = r;
+  });
+  var filter = web3.eth.filter('latest');
+  filter.watch(function(e, r) {
+    getValue();
+    web3.eth.getTransaction(txid, function(e,r){
+      if (r != null && r.blockNumber > 0) {
+        document.getElementById('pending').innerHTML = 'Pending: ' + r.blockNumber + ')';
+        document.getElementById('pending').style.cssText ='color:green;';
+        document.getElementById('storedData').style.cssText ='color:orange; font-size:300%;';
+        filter.stopWatching();
+      }
+   });
+ });
+}
+
+</script>
+</html>

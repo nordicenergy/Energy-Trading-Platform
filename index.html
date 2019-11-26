@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Energy Trading Platform</title>
+
+  <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
+  <link rel="stylesheet" href="assets/css/shared/style.css">
+  <link rel="stylesheet" href="assets/css/demo_1/style.css">
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+</head>
+
+<body class="header-fixed">
+<!-- partial:partials/_header.html -->
+<nav class="t-header">
+  <div class="t-header-brand-wrapper">
+    <a href="index.html">
+      <p style="color:rgb(80, 80, 80);font-weight:bold"> Nordic Energy</p>
+      <!-- <img class="logo" src="../assets/images/logo.svg" alt="">
+    <img class="logo-mini" src="../assets/images/logo_mini.svg" alt=""> -->
+    </a>
+  </div>
+  <div class="t-header-content-wrapper">
+    <div class="t-header-content">
+      <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
+        <i class="mdi mdi-menu"></i>
+      </button>
+      <ul class="nav ml-auto"></ul>
+    </div>
+  </div>
+</nav>
+  <!-- partial -->
+  <div class="page-body">
+    <!-- partial:partials/_sidebar.html -->
+    <div class="sidebar">
+      <ul class="navigation-menu">
+        <li></li>
+        <li class="nav-category-divider">MAIN</li>
+        <li>
+          <a href="index.html">
+            <span class="link-title">Energy Trading</span>
+            <i class="mdi mdi-recycle link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="account.html">
+            <span class="link-title">My Account</span>
+            <i class="mdi mdi-face link-icon"></i>
+          </a>
+        </li>
+        <li>
+        <li class="nav-category-divider">DOCUMENTS</li>
+        <li>
+          <a href="https://etherscan.io/token/0x4d0a4c762bd7f742096daaf5911dcf9c94b9ea95">
+            <span class="link-title">Technical Details</span>
+            <i class="mdi mdi-details link-icon"></i>
+          </a>
+        </li>
+        <li>
+        <li class="nav-category-divider">CONTRACT</li>
+        <li>
+          <a href="https://etherscan.io/token/0x4d0a4c762bd7f742096daaf5911dcf9c94b9ea95">
+            <span class="link-title">Smart Contract</span>
+            <i class="mdi mdi-script link-icon"></i>
+          </a>
+          <a href="https://nordicenergy.io">
+            <span class="link-title">Token Sale</span>
+            <i class="mdi mdi-coin link-icon"></i>
+          </a>
+        </li>
+        <li>
+        <li class="nav-category-divider">SOCIAL MEDIA</li>
+        <li>
+          <a href="https://github.com/nordicenergy/Energy-Asset-Platform/">
+            <span class="link-title">GiHhub</span>
+            <i class="mdi mdi-github-circle link-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- partial -->
+    <div class="page-content-wrapper">
+      <div class="page-content-wrapper-inner">
+        <div class="content-viewport">
+          <div class="row">
+            <div class="col-12 py-5">
+              <h4>Nordic Energy</h4>
+              <p class="text-gray">Blockchain application in energy trading</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body text-gray">
+                  <div class="d-flex justify-content-between">
+                    <p>USDT / ETH</p>
+                    <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left"
+                      title="Available balance since the last week">
+                      <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                    </span>
+                  </div>
+                  <p class="text-black">1 ETH = </p>
+                  <p class="text-black" id="ETHPrice1">$---</p>
+                  <div class="wrapper w-50 mt-4">
+                    <canvas height="45" id="stat-line_1"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body text-gray">
+                  <div class="d-flex justify-content-between">
+                    <p>USDT / NET</p>
+                    <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left"
+                          title="Available balance since the last week">
+                      <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                    </span>
+                  </div>
+                  <p class="text-black">1 NET = </p>
+                  <p class="text-black" id="NETPrice1">$---</p>
+                  <div class="wrapper w-50 mt-4">
+                    <canvas height="45" id="stat-line_2"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body text-gray">
+                  <div class="d-flex justify-content-between">
+                    <p>USDT / EOS</p>
+                    <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left"
+                          title="Available balance since the last week">
+                      <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                    </span>
+                  </div>
+                  <p class="text-black">1 EOS = </p>
+                  <p class="text-black" id="EOSPrice1">$---</p>
+                  <div class="wrapper w-50 mt-4">
+                    <canvas height="45" id="stat-line_3"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body text-gray">
+                  <div class="d-flex justify-content-between">
+                    <p>USDT / BTC</p>
+                    <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left"
+                          title="Available balance since the last week">
+                      <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                    </span>
+                  </div>
+                  <p class="text-black">1 BTC = </p>
+                  <p class="text-black" id="BTCPrice1">$---</p>
+                  <div class="wrapper w-50 mt-4">
+                    <canvas height="45" id="stat-line_4"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-lg-5 col-md-6 col-sm-12 equel-grid">
+              <div class="grid">
+                <div class="grid-body">
+                  <div class="split-header">
+                    <p class="card-title">Equel</p>
+                  </div>
+                  <div class="d-flex align-items-end mt-2">
+                    <h3><span id="storedData">undefined</span></h3>
+                  </div>
+                  <br>
+                  <div class="d-flex mt-2">
+                    <div class="wrapper d-flex pr-4">
+                      <small class="text-success font-weight-medium mr-2">SUCCESS</small>
+                      <small class="text-gray"><span id="lastBlock">undefined</span></small>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <button class="btn btn-outline-light text-gray component-flat w-50 mr-2" type="button"
+                      onclick="getValue()">GET VALUE</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-lg-5 col-md-6 col-sm-12 equel-grid">
+              <div class="grid">
+                <div class="grid-body">
+                  <div class="split-header">
+                    <p class="card-title">My Asset</p>
+                    <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left"
+                      title="Available balance since the last week">
+                      <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
+                    </span>
+                  </div>
+                  <div class="d-flex align-items-end mt-2">
+                    <h3><span id="storedETH">0</span></h3>
+                    <p class="ml-2 font-weight-bold"> ETH</p>
+                  </div>
+                  <div class="d-flex align-items-end mt-2">
+                    <h3><span id="storedNET">0</span></h3>
+                    <p class="ml-2 font-weight-bold"> NET</p>
+                  </div>
+                  <br>
+                  <div class="d-flex mt-2">
+                    <div class="wrapper d-flex pr-4">
+                      <small class="text-success font-weight-medium mr-2"> Current block</small>
+                      <small class="text-gray"><span id="lastBlock">Undefined</span></small>
+                    </div>
+                    <div class="wrapper d-flex">
+                      <small class="text-primary font-weight-medium mr-2">ETH</small>
+                      <small class="text-gray" id="ETHPrice2">$---</small>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <button class="btn btn-outline-light text-gray component-flat w-50 mr-2" type="button"
+                      onclick="getValue()">Refresh</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12 equel-grid">
+              <div class="grid widget-revenue-card">
+                <div class="grid-body d-flex flex-column h-100">
+                  <div class="split-header">
+                    <p class="card-title">Contract address</p>
+                    <!-- <div class="content-wrapper v-centered">
+                        <small class="text-muted">2h ago</small>
+                        <span class="btn action-btn btn-refresh btn-xs component-flat">
+                          <i class="mdi mdi-autorenew text-muted mdi-2x"></i>
+                        </span>
+                      </div> -->
+                  </div>
+                  <div class="">
+                    <!-- <canvas id="cpu-performance" height="80"></canvas> -->
+                    <h3 class="font-weight-medium mt-4" style="text-overflow: ellipsis;overflow: hidden; "><span
+                        id="contractAddr"></span></h3>
+                    <br>
+                    <p class="text-gray">My account address</p>
+                    <h3 class="font-weight-medium mt-4" style="text-overflow: ellipsis;overflow: hidden; "><span
+                        id="accountAddr"></span></li>
+                    </h3>
+
+                    <!-- <div class="w-50">
+                        <div class="d-flex justify-content-between text-muted mt-3">
+                          <small>Usage</small> <small>35.62 GB / 2TB</small>
+                        </div>
+                        <div class="progress progress-slim mt-2">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 68%" aria-valuenow="68"
+                            aria-valuemin="0" aria-valuemax="100">
+                          </div>
+                        </div>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-md-6 col-sm-12 equel-grid">
+              <div class="grid">
+                <div class="grid-body">
+                  <div class="split-header">
+                    <p class="ml-1 font-weight-bold">Deal</p>
+                  </div>
+                  <br>
+
+                  <div>Quantity of order</div>
+                  <div class="d-flex align-items-end mt-2">
+                    <input type="text" class="form-control" id="ordercount" value = "0" placeholder="Balance" autocomplete="off">
+                  </div>
+
+                  <br>
+
+                  <div>Order price</div>
+                  <div class="d-flex align-items-end mt-2">
+                    <input type="text" class="form-control" id="orderprice" readonly value = "0" placeholder="Price" autocomplete="off">
+                  </div>
+
+                  <br>
+
+                  <div class="d-flex mt-2">
+                    <div class="wrapper d-flex pr-4">
+                      <small class="text-token payment success! font-weight-medium mr-2">$ Dollar conversion :</small>
+                      <small class="text-gray">
+                        <div><p id="infoo">$0</p> Order Price</div>
+                      </small>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="">
+                    <button class="btn" id="buyy" type="button" onclick="setValue()"
+                            style="width:100%;margin:5px;background-color:#e6ac00;color:#fff">Energy purchase</button>
+                    <!-- <button class="btn" type="button" onclick="setValue()"
+                      style="width:190px;margin:5px;background-color:#e6ac00;color:#fff"">매도</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class=" col-lg-7 col-md-12 equel-grid">
+              <div class="grid widget-revenue-card" style="padding-top:20px;padding-right:20px">
+                <div id="chartdiv" style="width:100%;height:340px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="row">
+          <div class="col-sm-6 text-center text-sm-right order-sm-1">
+            <ul class="text-gray">
+              <li><a href="#">Terms of use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
+            <small class="text-muted d-block">© 2019 <a href="" target="_blank">Nordic Energy</a>. All
+              rights
+              reserved.</small>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src=" https://www.amcharts.com/lib/3/amcharts.js"> </script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
+      media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+<script src="assets/ethprice.js"></script>
+
+<script src="assets/vendors/js/core.js"></script>
+<script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+<script src="assets/vendors/chartjs/Chart.min.js"></script>
+<script src="assets/js/charts/chartjs.addon.js"></script>
+<script src="assets/js/template.js"></script>
+<script src="assets/js/dashboard.js"></script>
+
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="assets/meta.js"></script>
+</body>
+
+</html>
