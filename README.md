@@ -1,3 +1,4 @@
-# Blockchain Network
 
-Based of Quorum Blockchain
+# Energy Trading Platform
+
+#### Ethereum Blockchain-based application in energy trading.
