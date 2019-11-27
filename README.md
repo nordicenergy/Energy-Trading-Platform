@@ -2,6 +2,7 @@
 # Nordic Energy - Energy Trading Platform
 
  #### Ethereum Blockchain based application in energy trading.
+ 
 
 
 <pre><a href="https://github.com/nordicenergy/Energy-Trading-Platform">https://github.com/nordicenergy/Energy-Trading-Platform</a></pre>
