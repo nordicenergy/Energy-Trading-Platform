@@ -1,5 +1,5 @@
 
-# Nordic Energy - Energy Trading Platform
+# Nordic Energy - Energy Trading Platform v1.0
 
  #### Ethereum Blockchain based application in energy trading.
  
